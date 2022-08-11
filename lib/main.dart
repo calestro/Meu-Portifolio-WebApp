@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'activy/main_page.dart';
+import 'activy/big_device/desktop.dart';
 
 
 void main(){

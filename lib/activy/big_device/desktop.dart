@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:port_leonir/activy/comp/icons/mycomputer.dart';
-import 'package:port_leonir/activy/comp/main_page_style.dart';
+import 'package:port_leonir/activy/big_device/icons/icons_generetor.dart';
+import 'package:port_leonir/activy/comp/styles.dart';
 import 'package:port_leonir/activy/comp/title.dart';
 
 class MainPage extends StatefulWidget {

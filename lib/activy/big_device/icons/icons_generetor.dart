@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:port_leonir/activy/comp/icons/hovered.dart';
+import 'hovered.dart';
+
 
 
 class MyComputerIcon extends StatelessWidget {
