@@ -4,6 +4,8 @@ import 'package:port_leonir/activy/big_device/icons/icons_generetor.dart';
 import 'package:port_leonir/activy/comp/styles.dart';
 import 'package:port_leonir/activy/comp/system_software.dart';
 
+import 'icons/hovered.dart';
+
 class StartMenu extends StatefulWidget {
   const StartMenu({Key? key,}) : super(key: key);
 
@@ -104,6 +106,20 @@ class _StartMenuState extends State<StartMenu> {
             ),
           ),
         ),
+
+        //botão de desligar
+        Positioned(
+          bottom: 72,
+          left: 320,
+          child: OnHovered(
+            type: "icon",
+            size: 10,
+            child: Container(
+              child: Image.asset("img/power.png"),
+            ),
+          ),
+        ),
+
       ],
     );
   }
