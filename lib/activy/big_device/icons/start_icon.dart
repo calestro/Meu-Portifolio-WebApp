@@ -10,12 +10,12 @@ class StartIcon extends StatelessWidget {
   Widget build(BuildContext context) {
 
     final BoxDecoration startBox = BoxDecoration(
-      color: Color(0xff549a82),
+      color: const Color(0xff549a82),
       border: Border.all(
-        color: Color(0xff498a74),
+        color: const Color(0xff498a74),
         width: 5.0,
       ),
-      borderRadius: BorderRadius.all(
+      borderRadius: const BorderRadius.all(
         Radius.circular(40),
       ),
     );
@@ -26,7 +26,7 @@ class StartIcon extends StatelessWidget {
         color: Colors.transparent,
         width: 5.0,
       ),
-      borderRadius: BorderRadius.all(
+      borderRadius: const BorderRadius.all(
         Radius.circular(40),
       ),
     );
@@ -37,7 +37,7 @@ class StartIcon extends StatelessWidget {
           height: 40,
           width: 115,
           decoration:startBox,
-          child: Center(
+          child: const Center(
               child: Text("START", style: TextStyle(color: Colors.white),
               )),
         ),

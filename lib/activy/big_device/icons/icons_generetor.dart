@@ -5,11 +5,12 @@ import 'hovered.dart';
 
 class IconGenerator extends StatelessWidget {
 
-  final image;
-  final iconFunction;
+  final String image;
+  final Function iconFunction;
   final String textIcon;
+  final size;
 
-  const IconGenerator({Key? key,required this.image, required this.iconFunction, required this.textIcon}) : super(key: key);
+  IconGenerator({Key? key,required this.image, required this.iconFunction, required this.textIcon, this.size = 60}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,11 +21,12 @@ class IconGenerator extends StatelessWidget {
           color: Colors.transparent,
           child: OnHovered(
             type: "icon",
+            size: size,
             child: Column(
               children: [
-                Image.asset(image, width: 60,),
-                SizedBox(height: 10),
-                Text(textIcon, textAlign: TextAlign.center, style: TextStyle(color: Colors.white),),
+                Image.asset(image, width: size),
+                textIcon != "" ? SizedBox(height: 10) : Container(),
+                textIcon != "" ? Text(textIcon, textAlign: TextAlign.center, style: const TextStyle(color: Colors.white),) : Container(),
               ],
             ),
           ),

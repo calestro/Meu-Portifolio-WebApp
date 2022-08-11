@@ -5,7 +5,7 @@ import 'package:port_leonir/activy/big_device/start_menu.dart';
 import 'package:port_leonir/activy/comp/styles.dart';
 import 'package:port_leonir/activy/comp/title.dart';
 
-import 'Functions.dart';
+import 'functions.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -48,9 +48,9 @@ class _MainPageState extends State<MainPage> {
             child: Column(
               children: [
                 IconGenerator(image: "img/pc_icon.png", iconFunction: (){}, textIcon: "Meu Computador"),
-                SizedBox(height: 20,),
+                const SizedBox(height: 20,),
                 IconGenerator(image: "img/docx_icon.png", iconFunction: (){}, textIcon: "Curriculum"),
-                SizedBox(height: 20,),
+                const SizedBox(height: 20,),
                 IconGenerator(image: "img/skill_icon.png", iconFunction: (){}, textIcon: "Minhas Skills"),
               ],
             ),
@@ -67,7 +67,7 @@ class _MainPageState extends State<MainPage> {
                   color: Colors.transparent,
                 ),
               ),
-              StartMenu(),
+              const StartMenu(),
             ],
           ) : Container(),
 
@@ -97,7 +97,7 @@ class _MainPageState extends State<MainPage> {
                     setState(() {
                     call.startMenu();
                   });},
-                    child: Container(child: StartIcon()),
+                    child: const StartIcon(),
                 ),
               ],
             ),

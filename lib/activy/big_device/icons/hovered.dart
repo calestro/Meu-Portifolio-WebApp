@@ -5,8 +5,10 @@ class OnHovered extends StatefulWidget {
 
   final Widget child;
   final String type;
+  final size;
 
-  const OnHovered({Key? key, required this.child, required this.type,}) : super(key: key);
+
+  OnHovered({Key? key, required this.child, required this.type, this.size = 60 }) : super(key: key);
   @override
   State<OnHovered> createState() => _OnHoveredState();
 }
@@ -31,7 +33,7 @@ class _OnHoveredState extends State<OnHovered> {
             color: isHovered ? colorHovered[1] : color,
             width: 1.0,
           ),
-          borderRadius: BorderRadius.all(
+          borderRadius: const BorderRadius.all(
             Radius.circular(15),
           ),
         );
@@ -42,8 +44,8 @@ class _OnHoveredState extends State<OnHovered> {
         onExit: (event) => onEntered(false),
 
         child: Container(
-            width: 130,
-            height: 90,
+            width: widget.size + 70,
+            height: widget.size + 30,
             decoration: styleHover,
             child: widget.child
         )
@@ -57,7 +59,7 @@ class _OnHoveredState extends State<OnHovered> {
             color:isHovered ? Colors.black12.withOpacity(0.3) : Colors.transparent,
             width: 5.0,
           ),
-          borderRadius: BorderRadius.all(
+          borderRadius: const BorderRadius.all(
             Radius.circular(40),
           ),
         );
