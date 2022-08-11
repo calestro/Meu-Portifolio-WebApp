@@ -23,6 +23,7 @@ class IconGenerator extends StatelessWidget {
             child: Column(
               children: [
                 Image.asset(image, width: 60,),
+                SizedBox(height: 10),
                 Text(textIcon, textAlign: TextAlign.center, style: TextStyle(color: Colors.white),),
               ],
             ),

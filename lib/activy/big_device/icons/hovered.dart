@@ -43,7 +43,7 @@ class _OnHoveredState extends State<OnHovered> {
 
         child: Container(
             width: 130,
-            height: 80,
+            height: 90,
             decoration: styleHover,
             child: widget.child
         )
