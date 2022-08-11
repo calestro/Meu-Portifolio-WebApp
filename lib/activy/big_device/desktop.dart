@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:port_leonir/activy/big_device/icons/icons_generetor.dart';
 import 'package:port_leonir/activy/big_device/icons/start_icon.dart';
 import 'package:port_leonir/activy/big_device/start_menu.dart';
+import 'package:port_leonir/activy/comp/date_and_time.dart';
 import 'package:port_leonir/activy/comp/styles.dart';
 import 'package:port_leonir/activy/comp/title.dart';
 
@@ -56,7 +57,8 @@ class _MainPageState extends State<MainPage> {
             ),
           ),
 
-          //menu Start
+
+          //StarOpen
           call.isClickStart ?  Stack(
             children: [
               GestureDetector(
@@ -70,8 +72,7 @@ class _MainPageState extends State<MainPage> {
               const StartMenu(),
             ],
           ) : Container(),
-
-          //Iniciar Background
+          //Start Background
           Positioned(
             bottom: 0,
             child: Container(
@@ -82,8 +83,7 @@ class _MainPageState extends State<MainPage> {
               ),
             ),
           ),
-
-          //Componentes do iniciar
+          //exit menuStart
           Positioned(
             left: 15,
             bottom: 5,
@@ -102,6 +102,10 @@ class _MainPageState extends State<MainPage> {
               ],
             ),
           ),
+
+          //Hora
+          DateAndTime(),
+
         ]),
       ),
     );

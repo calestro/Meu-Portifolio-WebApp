@@ -7,6 +7,7 @@ class Functions {
   Functions._internal();
 
   bool isClickStart = false;
+  List openedSoftware = [];
 
 
 
@@ -14,4 +15,10 @@ class Functions {
   void startMenu(){
     isClickStart = !isClickStart;
   }
+
+void openingAppsBar(app){
+
+}
+
+
 }
