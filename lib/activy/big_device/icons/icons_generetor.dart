@@ -3,11 +3,13 @@ import 'hovered.dart';
 
 
 
-class MyComputerIcon extends StatelessWidget {
+class IconGenerator extends StatelessWidget {
+
   final image;
   final iconFunction;
   final String textIcon;
-  const MyComputerIcon({Key? key,required this.image, required this.iconFunction, required this.textIcon}) : super(key: key);
+
+  const IconGenerator({Key? key,required this.image, required this.iconFunction, required this.textIcon}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

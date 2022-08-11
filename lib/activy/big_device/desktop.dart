@@ -13,6 +13,7 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
+
     final wd = MediaQuery.of(context).size.width;
     final hg = MediaQuery.of(context).size.height;
 
@@ -25,8 +26,7 @@ class _MainPageState extends State<MainPage> {
         height: hg,
         child: Stack(children: [
           //Titulo
-          Padding(
-            padding: const EdgeInsets.all(40),
+          Center(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisSize: MainAxisSize.min,
@@ -37,32 +37,17 @@ class _MainPageState extends State<MainPage> {
             ),
           ),
 
-          //contact
-          Positioned(
-            top: 45,
-            right: 30,
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Text(
-                  "(22) 992131045  ", style: style.infoGeral,
-                ),
-                Text("calestrojunior@gmail.com  ", style: style.infoGeral),
-                Text("Nova Friburgo  ", style: style.infoGeral),
-              ],
-            ),
-          ),
-
           //icones
           Positioned(
-            top: 130,
+            top: 30,
             left: 40,
             child: Column(
               children: [
-                MyComputerIcon(image: "img/pc_icon.png", iconFunction: (){}, textIcon: "Meu Computador"),
+                IconGenerator(image: "img/pc_icon.png", iconFunction: (){}, textIcon: "Meu Computador"),
                 SizedBox(height: 20,),
-                MyComputerIcon(image: "img/docx_icon.png", iconFunction: (){}, textIcon: "Curriculum"),
+                IconGenerator(image: "img/docx_icon.png", iconFunction: (){}, textIcon: "Curriculum"),
+                SizedBox(height: 20,),
+                IconGenerator(image: "img/skill_icon.png", iconFunction: (){}, textIcon: "Minhas Skills"),
               ],
             ),
           ),

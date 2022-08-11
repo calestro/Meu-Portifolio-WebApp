@@ -10,8 +10,8 @@ class Myname extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    const  TextStyle name = TextStyle(color: Color(0xFF549a82), fontSize: 20);
-    const  TextStyle surname = TextStyle(color: Color(0xFF70bcc9), fontSize: 20);
+    const  TextStyle name = TextStyle(color: Color(0xFF549a82), fontSize: 75);
+    const  TextStyle surname = TextStyle(color: Color(0xFF70bcc9), fontSize: 75);
 
     return Row(
       mainAxisSize: MainAxisSize.min,
