@@ -19,10 +19,7 @@ class _StartMenuState extends State<StartMenu> {
   SystemSoftware system = SystemSoftware();
   StyleMain style = StyleMain();
 
-
-
-
-    return Stack(
+  return Stack(
       children: [
         Positioned(
           left: 15,
