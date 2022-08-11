@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:port_leonir/activy/big_device/icons/icons_generetor.dart';
+import 'package:port_leonir/activy/big_device/icons/start_icon.dart';
 import 'package:port_leonir/activy/comp/styles.dart';
 import 'package:port_leonir/activy/comp/title.dart';
 
@@ -73,16 +74,7 @@ class _MainPageState extends State<MainPage> {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Container(
-                  height: 40,
-                  width: 115,
-                  decoration: style.startBox,
-                  child: Center(
-                      child: Text(
-                    "START",
-                    style: TextStyle(color: Colors.white),
-                  )),
-                ),
+                StartIcon(),
               ],
             ),
           ),

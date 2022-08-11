@@ -19,6 +19,7 @@ class IconGenerator extends StatelessWidget {
         child: Container(
           color: Colors.transparent,
           child: OnHovered(
+            type: "icon",
             child: Column(
               children: [
                 Image.asset(image, width: 60,),

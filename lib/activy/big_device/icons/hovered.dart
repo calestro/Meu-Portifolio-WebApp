@@ -4,8 +4,9 @@ import 'package:flutter/material.dart';
 class OnHovered extends StatefulWidget {
 
   final Widget child;
+  final String type;
 
-  const OnHovered({Key? key, required this.child}) : super(key: key);
+  const OnHovered({Key? key, required this.child, required this.type,}) : super(key: key);
   @override
   State<OnHovered> createState() => _OnHoveredState();
 }
@@ -19,29 +20,60 @@ class _OnHoveredState extends State<OnHovered> {
  @override
   Widget build(BuildContext context) {
 
-    final BoxDecoration styleHover = BoxDecoration(
-      color:isHovered ? colorHovered[0] : color ,
-      border: Border.all(
-        color: isHovered ? colorHovered[1] : color,
-        width: 1.0,
-      ),
-      borderRadius: BorderRadius.all(
-        Radius.circular(15),
-      ),
-    );
 
-    return MouseRegion(
+
+    switch(widget.type) {
+      case "icon":
+
+        final BoxDecoration styleHover = BoxDecoration(
+          color:isHovered ? colorHovered[0] : color ,
+          border: Border.all(
+            color: isHovered ? colorHovered[1] : color,
+            width: 1.0,
+          ),
+          borderRadius: BorderRadius.all(
+            Radius.circular(15),
+          ),
+        );
+
+        return MouseRegion(
 
         onEnter: (event) => onEntered(true),
         onExit: (event) => onEntered(false),
 
-        child:Container(
+        child: Container(
             width: 130,
             height: 80,
             decoration: styleHover,
             child: widget.child
         )
     );
+
+      case "start":
+
+         final BoxDecoration startBoxHover = BoxDecoration(
+          color: isHovered ? Colors.black12.withOpacity(0.2) : Colors.transparent,
+          border: Border.all(
+            color:isHovered ? Colors.black12.withOpacity(0.3) : Colors.transparent,
+            width: 5.0,
+          ),
+          borderRadius: BorderRadius.all(
+            Radius.circular(40),
+          ),
+        );
+
+         return MouseRegion(
+          onEnter: (event) => onEntered(true),
+          onExit: (event) => onEntered(false),
+          child: Container(
+            height: 40,
+            width: 115,
+            decoration: startBoxHover,
+              ),
+        );
+      default:
+        return Container();
+ }
   }
 
   void onEntered(bool isHovered)=> setState(() {this.isHovered = isHovered;});
