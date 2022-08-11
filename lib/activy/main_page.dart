@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:port_leonir/activy/comp/icons/Icons_mycomputer.dart';
+import 'package:port_leonir/activy/comp/icons/mycomputer.dart';
 import 'package:port_leonir/activy/comp/main_page_style.dart';
 import 'package:port_leonir/activy/comp/title.dart';
 
@@ -13,7 +13,6 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
-
     final wd = MediaQuery.of(context).size.width;
     final hg = MediaQuery.of(context).size.height;
 
@@ -24,9 +23,7 @@ class _MainPageState extends State<MainPage> {
       body: SizedBox(
         width: wd,
         height: hg,
-        child: Stack(
-            children: [
-
+        child: Stack(children: [
           //Titulo
           Padding(
             padding: const EdgeInsets.all(40),
@@ -40,18 +37,6 @@ class _MainPageState extends State<MainPage> {
             ),
           ),
 
-
-          //icones
-        Positioned(
-          top: 160,
-          left: 40,
-            child: Column(
-            children: [
-              MyComputerIcon()
-            ],
-            ),
-        ),
-
           //contact
           Positioned(
             top: 45,
@@ -60,26 +45,41 @@ class _MainPageState extends State<MainPage> {
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Text("(22) 992131045  ", style: style.infoGeral,),
-                Text("calestrojunior@gmail.com  ",style: style.infoGeral),
-                Text("Rua São Paulo N° 256  ",style: style.infoGeral),
+                Text(
+                  "(22) 992131045  ", style: style.infoGeral,
+                ),
+                Text("calestrojunior@gmail.com  ", style: style.infoGeral),
+                Text("Nova Friburgo  ", style: style.infoGeral),
               ],
             ),
           ),
 
-              //Iniciar Background
+          //icones
+          Positioned(
+            top: 130,
+            left: 40,
+            child: Column(
+              children: [
+                MyComputerIcon(image: "img/pc_icon.png", iconFunction: (){}, textIcon: "Meu Computador"),
+                SizedBox(height: 20,),
+                MyComputerIcon(image: "img/docx_icon.png", iconFunction: (){}, textIcon: "Curriculum"),
+              ],
+            ),
+          ),
+
+          //Iniciar Background
           Positioned(
             bottom: 0,
             child: Container(
               width: wd,
               height: 60,
               decoration: const BoxDecoration(
-                color:Color(0xFF212121),
+                color: Color(0xFF212121),
               ),
             ),
           ),
 
-              //Componentes do iniciar
+          //Componentes do iniciar
           Positioned(
             left: 15,
             bottom: 5,
@@ -87,18 +87,21 @@ class _MainPageState extends State<MainPage> {
             height: 50,
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
-              children:  [
+              children: [
                 Container(
                   height: 40,
                   width: 115,
-                  decoration:style.startBox,
-                  child: Center(child: Text("START", style: TextStyle(color: Colors.white), )),
+                  decoration: style.startBox,
+                  child: Center(
+                      child: Text(
+                    "START",
+                    style: TextStyle(color: Colors.white),
+                  )),
                 ),
               ],
             ),
           ),
-
-            ]),
+        ]),
       ),
     );
   }
