@@ -7,7 +7,7 @@ import 'activy/big_device/desktop.dart';
 void main(){
 
   runApp(const MaterialApp(
-    home:MySkillApp(),
+    home:GraphMySkill(),
     //MainPage(),
   ));
 
