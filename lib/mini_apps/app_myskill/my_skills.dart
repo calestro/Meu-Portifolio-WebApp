@@ -1,25 +1,16 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:port_leonir/config/languages_icon_icons.dart';
-import 'package:port_leonir/mini_apps/animation_bar.dart';
-import 'dart:math' as math;
-
-import 'package:port_leonir/mini_apps/functions.dart';
-
-import 'bar_data.dart';
+import 'package:port_leonir/mini_apps/app_myskill/icon_animated.dart';
+import 'package:port_leonir/mini_apps/app_myskill/skill_app_data.dart';
+import 'helper/bar_data_helper.dart';
+import 'description_bottom_bar.dart';
 
 class GraphMySkill extends StatefulWidget {
   const GraphMySkill({Key? key}) : super(key: key);
 
 
-  static const dataList = [
-    BarData(Color(0xFFecb206), 20, LanguagesIcon.python),
-    BarData(Color(0xFFa8bd1a), 17,Icons.e_mobiledata),
-    BarData(Color(0xFF17987b), 10,Icons.abc),
-    BarData(Color(0xFFb87d46), 2.5,Icons.abc),
-    BarData(Color(0xFF295ab5), 2,Icons.abc),
-    BarData(Color(0xFFea0107), 2,Icons.abc),
-  ];
+
 
   @override
   State<GraphMySkill> createState() => _GraphMySkillState();
@@ -40,7 +31,7 @@ class _GraphMySkillState extends State<GraphMySkill> {
         BarChartRodData(
           toY: value,
           color: color,
-          width: 6,
+          width: 30,
         ),
       ],
       showingTooltipIndicators: touchedGroupIndex == x ? [0] : [],
@@ -52,7 +43,6 @@ class _GraphMySkillState extends State<GraphMySkill> {
   @override
   Widget build(BuildContext context) {
 
-    MyFunctions functions = MyFunctions();
     double wd = MediaQuery.of(context).size.width;
     double hg = MediaQuery.of(context).size.height;
 
@@ -61,30 +51,40 @@ class _GraphMySkillState extends State<GraphMySkill> {
       elevation: 4,
       child: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(24),
+          padding: const EdgeInsets.all(40),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Align(alignment:Alignment.center,child: Text("My Skills", textAlign: TextAlign.center)),
               SizedBox(height: hg * 0.05),
               AspectRatio(
-                aspectRatio: wd / 500,
+                aspectRatio: wd / 390,
                 child: BarChart(
                   BarChartData(
                     alignment: BarChartAlignment.spaceAround,
+
                     borderData: FlBorderData(
                       show: true,
                       border: const Border.symmetric(
                         horizontal: BorderSide(
-                          color: Color(0xFFececec),
+                          color: Colors.black12,
                         ),
                       ),
                     ),
                     titlesData: FlTitlesData(
                       show: true,
+                      rightTitles: AxisTitles(
+                        sideTitles: SideTitles(
+                          showTitles: false,
+                        ),
+                      ),
+                      topTitles: AxisTitles(
+                        sideTitles: SideTitles(
+                          showTitles: false,
+                        )
+                      ),
                       leftTitles: AxisTitles(
-                        drawBehindEverything: true,
+                        drawBehindEverything: false,
                         sideTitles: SideTitles(
                           showTitles: true,
                           reservedSize: 30,
@@ -108,7 +108,7 @@ class _GraphMySkillState extends State<GraphMySkill> {
                             return SideTitleWidget(
                               axisSide: meta.axisSide,
                               child: IconWidget(
-                                color: GraphMySkill.dataList[index].color,
+                                color: AppData.dataList[index].color,
                                 isSelected: touchedGroupIndex == index,
                                 index: index,
                               ),
@@ -123,14 +123,14 @@ class _GraphMySkillState extends State<GraphMySkill> {
                       show: true,
                       drawVerticalLine: false,
                       getDrawingHorizontalLine: (value) => FlLine(
-                        color: const Color(0xFFececec),
+                        color: Colors.black12,
                         dashArray: null,
                         strokeWidth: 1,
                       ),
                     ),
 
                     //setando cores no grafico
-                    barGroups: GraphMySkill.dataList.asMap().entries.map((e) {
+                    barGroups: AppData.dataList.asMap().entries.map((e) {
                       final index = e.key;
                       final data = e.value;
                       final color = Colors.green;
@@ -192,6 +192,8 @@ class _GraphMySkillState extends State<GraphMySkill> {
                   ),
                 ),
               ),
+              SizedBox(height: hg * 0.02,),
+              DescriptionLanguage(index: touchedGroupIndex),
             ],
           ),
         ),

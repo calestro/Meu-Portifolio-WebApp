@@ -25,7 +25,8 @@ class LanguagesIcon {
   static const _kFontFam = 'LanguagesIcon';
   static const String? _kFontPkg = null;
 
-  static const IconData laravel_no_color = IconData(0xe800, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData vue_no_color = IconData(0xe803, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData vue_color = IconData(0xe804, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData node_js = IconData(0xf3d3, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData python = IconData(0xf3e2, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData vuejs = IconData(0xf41f, fontFamily: _kFontFam, fontPackage: _kFontPkg);

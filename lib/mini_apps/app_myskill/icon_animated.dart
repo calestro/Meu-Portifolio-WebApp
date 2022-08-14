@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:port_leonir/mini_apps/app_myskill/skill_app_data.dart';
 
-import 'my_skills.dart';
 
 class IconWidget extends ImplicitlyAnimatedWidget {
   final Color color;
@@ -27,7 +27,7 @@ class IconWidgetState extends AnimatedWidgetBaseState<IconWidget> {
       transform: Matrix4.translationValues(scale, 0, 0).scaled(scale, scale),
       origin: const Offset(14, 14),
       child: Icon(
-        GraphMySkill.dataList[widget.index].iconInit,
+        AppData.dataList[widget.index].iconInit,
         color: widget.isSelected ? Colors.green : widget.color,
         size: 28,
       ),

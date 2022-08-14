@@ -19,6 +19,7 @@ class _DateAndTimeState extends State<DateAndTime> {
     Timer.periodic(Duration(seconds: 60), (Timer t) { setState(() {});});
     super.initState();
   }
+  @override
   Widget build(BuildContext context) {
     
     StyleMain style = StyleMain();
