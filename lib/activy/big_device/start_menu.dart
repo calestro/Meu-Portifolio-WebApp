@@ -1,9 +1,9 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:port_leonir/activy/big_device/icons/icons_generetor.dart';
 import 'package:port_leonir/activy/comp/styles.dart';
 import 'package:port_leonir/activy/comp/system_software.dart';
 
+import '../../config/my_icon_icons.dart';
 import 'icons/hovered.dart';
 
 class StartMenu extends StatefulWidget {
@@ -18,6 +18,7 @@ class _StartMenuState extends State<StartMenu> {
   Widget build(BuildContext context) {
   SystemSoftware system = SystemSoftware();
   StyleMain style = StyleMain();
+
 
   return Stack(
       children: [
@@ -35,13 +36,24 @@ class _StartMenuState extends State<StartMenu> {
                 Center(child: Text("Social Media", style:style.infoGeral, textAlign: TextAlign.center,)),
                 Padding(
                   padding: EdgeInsets.only(top: 10, left: 0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      IconGenerator(image: "img/git.png", iconFunction: (){}, textIcon: "GitHub",size: 37),
-                      IconGenerator(image: "img/git.png", iconFunction: (){}, textIcon: "GitHub",size: 37),
-                      IconGenerator(image: "img/git.png", iconFunction: (){}, textIcon: "GitHub",size: 37),
-                    ],
+                  child: Center(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        OnHovered(
+                            type: 'icon',
+                            size: 32,
+                            child: IconButton(onPressed: (){}, icon: Icon(MyIcon.linkedin_circled, size: 32))),
+                        OnHovered(
+                            type: 'icon',
+                            size: 32,
+                            child: IconButton(onPressed: (){}, icon: Icon(MyIcon.whatsapp, size: 32,))),
+                        OnHovered(
+                            type: 'icon',
+                            size: 32,
+                            child: IconButton(onPressed: (){}, icon: Icon(MyIcon.github, size: 32,))),
+                      ],
+                    ),
                   ),
                 ),
                 Container(height: 360 - (system.initStart.length * 50)),
@@ -65,11 +77,18 @@ class _StartMenuState extends State<StartMenu> {
                                 height: 50,
                                 alignment: Alignment.centerLeft,
                                 color: Colors.black12.withOpacity(0.3),
-                                child: Row(
-                                  children: [
-                                    isIcon ? Icon(system.initStart[index]["icon"] ) : system.initStart[index]["icon"],
-                                    Text(system.initStart[index]["title"], textAlign: TextAlign.start,)
-                                  ],
+                                child: OnHovered(
+                                  type: "icon",
+                                  size: 400,
+                                  child: Padding(
+                                    padding: EdgeInsets.all(10),
+                                    child: Row(
+                                      children: [
+                                        isIcon ? Icon(system.initStart[index]["icon"], color: Colors.white, ) : system.initStart[index]["icon"],
+                                        Text("     " + system.initStart[index]["title"], textAlign: TextAlign.start, style: TextStyle(color: Colors.white),)
+                                      ],
+                                    ),
+                                  ),
                                 ),
                               ),
                             ],
@@ -81,18 +100,25 @@ class _StartMenuState extends State<StartMenu> {
                             height: 50,
                             alignment: Alignment.centerLeft,
                             color: Colors.black12.withOpacity(0.3),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Icon(system.initStart[index]["icon"]),
-                                Text(system.initStart[index]["title"], textAlign: TextAlign.start,),
-                                Expanded(
-                                  child: Align(
-                                    alignment: Alignment.centerRight,
-                                      child: Icon(Icons.arrow_forward)
-                                  ),
+                            child: OnHovered(
+                              type: "icon",
+                              size: 400,
+                              child: GestureDetector(
+                                onTap: OptionsMenu,
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Icon(system.initStart[index]["icon"]),
+                                    Text(system.initStart[index]["title"], textAlign: TextAlign.start,),
+                                    Expanded(
+                                      child: Align(
+                                        alignment: Alignment.centerRight,
+                                          child: Icon(Icons.arrow_forward)
+                                      ),
+                                    ),
+                                  ],
                                 ),
-                              ],
+                              ),
                             ),
                           );
                         }
@@ -120,4 +146,9 @@ class _StartMenuState extends State<StartMenu> {
       ],
     );
   }
+void OptionsMenu(){
+
+}
+
+
 }

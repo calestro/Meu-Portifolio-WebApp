@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 
+
 class OnHovered extends StatefulWidget {
 
   final Widget child;
@@ -19,24 +20,25 @@ class _OnHoveredState extends State<OnHovered> {
   Color color = Colors.transparent;
 
 
+
  @override
   Widget build(BuildContext context) {
 
+   final BoxDecoration styleHover = BoxDecoration(
+     color:isHovered ? colorHovered[0] : color ,
+     border: Border.all(
+       color: isHovered ? colorHovered[1] : color,
+       width: 1.0,
+     ),
+     borderRadius: const BorderRadius.all(
+       Radius.circular(15),
+     ),
+   );
 
 
     switch(widget.type) {
       case "icon":
 
-        final BoxDecoration styleHover = BoxDecoration(
-          color:isHovered ? colorHovered[0] : color ,
-          border: Border.all(
-            color: isHovered ? colorHovered[1] : color,
-            width: 1.0,
-          ),
-          borderRadius: const BorderRadius.all(
-            Radius.circular(15),
-          ),
-        );
 
         return MouseRegion(
 
@@ -73,10 +75,11 @@ class _OnHoveredState extends State<OnHovered> {
             decoration: startBoxHover,
               ),
         );
-      default:
+
+         default:
         return Container();
  }
   }
 
-  void onEntered(bool isHovered)=> setState(() {this.isHovered = isHovered;});
+  void onEntered(isHovered)=> setState(() {this.isHovered = isHovered;});
 }

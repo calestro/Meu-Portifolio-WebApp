@@ -6,7 +6,7 @@ import 'hovered.dart';
 class IconGenerator extends StatelessWidget {
 
   final String image;
-  final Function iconFunction;
+  final iconFunction;
   final String textIcon;
   final size;
 
@@ -17,6 +17,7 @@ class IconGenerator extends StatelessWidget {
 
     return GestureDetector(
       child: GestureDetector(
+        onDoubleTap: iconFunction,
         child: Container(
           color: Colors.transparent,
           child: OnHovered(
