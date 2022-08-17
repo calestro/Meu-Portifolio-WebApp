@@ -29,6 +29,9 @@ class _MainBigDevicesState extends State<MainBigDevices> {
   mdiController = MdiController(() {setState(() {});},context);
   super.initState();
   }
+  ListWidget list = ListWidget();
+  late final wd;
+  late final hg;
   @override
   Widget build(BuildContext context) {
     if(!isInit){ init();isInit = true; }
@@ -36,7 +39,7 @@ class _MainBigDevicesState extends State<MainBigDevices> {
     final hg = MediaQuery.of(context).size.height;
     StyleMain style = StyleMain();
     Functions call = Functions();
-    ListWidget list = ListWidget();
+
 
 
     return Scaffold(
@@ -69,7 +72,7 @@ class _MainBigDevicesState extends State<MainBigDevices> {
                     textIcon: "Meu Computador"),
                 const SizedBox(height: 20,),
                 IconGenerator(image: "img/docx_icon.png", 
-                    iconFunction: (){mdiController.addApp("Meu Curriculo", const MyCurriculum());},
+                    iconFunction: (){mdiController.addApp("Meu Curriculo", const MyCurriculum(), initMaximize: true);},
                     textIcon: "Curriculum"),
                 const SizedBox(height: 20,),
                 IconGenerator(image: "img/skill_icon.png",
@@ -162,7 +165,7 @@ class _MainBigDevicesState extends State<MainBigDevices> {
                             }
                             else{
                               double? x = list.savePostion[list.windowsOpenned[index].key];
-                              if(x == null || x > wd){x= 30;}
+                              if(x == null || x >= wd){x= 30;}
                               list.windowsOpenned[index].x = x;
                               mdiController.onUpdate();
                             }
@@ -187,5 +190,13 @@ class _MainBigDevicesState extends State<MainBigDevices> {
   }
   void init(){
     mdiController.addApp("Meu Computador", const ReadmeApp());
+  }
+  void initMaxize(){
+    list.windowsOpenned.last.currentWidth = wd;
+    list.windowsOpenned.last.currentHeight = hg;
+    list.windowsOpenned.last.x= 0;
+    list.windowsOpenned.last.y= 0;
+    mdiController.onUpdate;
+    setState(() {});
   }
 }

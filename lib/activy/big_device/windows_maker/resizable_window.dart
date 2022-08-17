@@ -1,5 +1,7 @@
 // ignore_for_file: must_be_immutable
 
+
+
 import 'package:flutter/material.dart';
 import 'package:port_leonir/activy/big_device/windows_maker/list_widget.dart';
 
@@ -12,15 +14,16 @@ class ResizableWindow extends StatefulWidget {
   Widget body;
   bool isMinimmize  = false;
   bool isMaximize = false;
+  var context;
 
   late Function(double, double) onWindowDragged;
   late VoidCallback onCloseButtonClicked;
 
 
 
-  ResizableWindow(this.title,this.body) : super(key: UniqueKey()) {
-    currentHeight = defaultHeight;
-    currentWidth = defaultWidth;
+  ResizableWindow(this.title,this.body,this.isMaximize,this.context) : super(key: UniqueKey()) {
+    currentHeight = isMaximize ? MediaQuery.of(context).size.height - 60 :defaultHeight;
+    currentWidth =  isMaximize ?  MediaQuery.of(context).size.width :defaultWidth;
   }
 
   @override
@@ -325,7 +328,7 @@ class _ResizableWindowState extends State<ResizableWindow> {
         widget.currentHeight = MediaQuery
             .of(context)
             .size
-            .height - 80;
+            .height - 60;
         widget.x = 0;
         widget.y = 0;
         _onHorizontalDragLeft(DragUpdateDetails(globalPosition: Offset.zero));
