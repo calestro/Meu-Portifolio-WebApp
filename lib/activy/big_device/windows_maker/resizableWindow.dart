@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:port_leonir/activy/big_device/windows_maker/list_widget.dart';
 
 class ResizableWindow extends StatefulWidget {
   late double currentHeight, defaultHeight = 400;
@@ -7,6 +8,8 @@ class ResizableWindow extends StatefulWidget {
   late double y;
   String title;
   Widget body;
+  bool isMinimmize  = false;
+  bool isMaximize = false;
 
   late Function(double, double) onWindowDragged;
   late VoidCallback onCloseButtonClicked;
@@ -29,9 +32,13 @@ class _ResizableWindowState extends State<ResizableWindow> {
     color: Color(0xFF212121),
     borderRadius: BorderRadius.only(topLeft: Radius.circular(10), topRight:Radius.circular(10) ),
   );
-
+  ListWidget list = ListWidget();
+  late double wd;
+  late double hg;
   @override
   Widget build(BuildContext context) {
+   wd = MediaQuery.of(context).size.width;
+   hg = MediaQuery.of(context).size.height;
     return Container(
         decoration: BoxDecoration(
           //Here goes the same radius, u can put into a var or function
@@ -182,6 +189,20 @@ class _ResizableWindowState extends State<ResizableWindow> {
 
           children: [
             Positioned(
+              right: 108,
+              top: 0,
+              bottom: 0,
+              child: ElevatedButton(
+               child: Text("-"),
+                style: ElevatedButton.styleFrom(
+                    primary: Colors.transparent,
+                    textStyle:
+                    TextStyle(fontSize: 0,
+                        fontWeight: FontWeight.bold)),
+                onPressed:onClickMinimize,
+              ),
+            ),
+            Positioned(
               right: 50,
               top: 0,
               bottom: 0,
@@ -294,21 +315,38 @@ class _ResizableWindowState extends State<ResizableWindow> {
 
   void _onClickMaximize() {
     setState(() {
-      widget.currentWidth = MediaQuery
-          .of(context)
-          .size
-          .width;
-      widget.currentHeight = MediaQuery
-          .of(context)
-          .size
-          .height - 80;
-      widget.x = 0;
-      widget.y = 0;
-      _onHorizontalDragLeft(DragUpdateDetails(globalPosition: Offset.zero));
+      if(!widget.isMaximize) {
+        widget.currentWidth = MediaQuery
+            .of(context)
+            .size
+            .width;
+        widget.currentHeight = MediaQuery
+            .of(context)
+            .size
+            .height - 80;
+        widget.x = 0;
+        widget.y = 0;
+        _onHorizontalDragLeft(DragUpdateDetails(globalPosition: Offset.zero));
+      }
+      else{
+        widget.currentWidth = widget.defaultWidth;
+        widget.currentHeight = widget.defaultHeight;
+        widget.x = wd * 0.3 ;
+        widget.y = hg * 0.3;
+        _onHorizontalDragLeft(DragUpdateDetails(globalPosition: Offset.zero));
+      }
+      widget.isMaximize = !widget.isMaximize;
     });
   }
-    void _onClickMinimize(){
+    void onClickMinimize(){
     setState(() {
+
+      int index =  list.windowsOpenned.indexWhere((element) => element.key == widget.key);
+      list.savePostion = {list.windowsOpenned[index].key:list.windowsOpenned[index].x};
+      list.windowsOpenned[index].x = wd + 200;
+      list.windowsOpenned[index].isMinimmize = true;
+
+      _onHorizontalDragLeft(DragUpdateDetails(globalPosition: Offset.infinite));
 
     });
     }

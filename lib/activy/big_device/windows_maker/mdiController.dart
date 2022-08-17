@@ -1,20 +1,20 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:port_leonir/activy/big_device/windows_maker/list_widget.dart';
 
 
 import 'resizableWindow.dart';
 
 class MdiController{
 
-
-  MdiController(this._onUpdate, this.context);
+  MdiController(this.onUpdate, this.context);
 
   var context;
 
   List<ResizableWindow> _windows = List.empty(growable: true);
 
-  VoidCallback _onUpdate;
+  VoidCallback onUpdate;
 
 
   List<ResizableWindow> get windows => _windows;
@@ -47,7 +47,8 @@ class MdiController{
       _windows.remove(resizableWindow);
       _windows.add(resizableWindow);
 
-      _onUpdate();
+
+      onUpdate();
 
 
     };
@@ -55,17 +56,21 @@ class MdiController{
     //Init onCloseButtonClicked
     resizableWindow.onCloseButtonClicked = (){
       _windows.remove(resizableWindow);
-      _onUpdate();
+      ListWidget().windowsOpenned.remove(resizableWindow);
+      onUpdate();
     };
 
 
     //Add Window to List
     _windows.add(resizableWindow);
+    ListWidget().windowsOpenned.add(resizableWindow);
+
 
     // Update Widgets after adding the new App
-    _onUpdate();
+    onUpdate();
 
   }
 
 
 }
+

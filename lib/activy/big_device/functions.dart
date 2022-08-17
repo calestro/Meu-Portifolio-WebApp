@@ -1,3 +1,5 @@
+import 'package:port_leonir/activy/big_device/windows_maker/mdiController.dart';
+
 class Functions {
 
   static final Functions _functions = Functions._internal();
@@ -7,7 +9,7 @@ class Functions {
   Functions._internal();
 
   bool isClickStart = false;
-  List openedSoftware = [];
+
 
 
 
@@ -17,6 +19,7 @@ class Functions {
   }
 
 void openingAppsBar(app){
+
 
 }
 
