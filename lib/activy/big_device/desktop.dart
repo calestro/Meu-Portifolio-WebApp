@@ -9,6 +9,7 @@ import 'package:port_leonir/activy/comp/date_and_time.dart';
 import 'package:port_leonir/activy/comp/styles.dart';
 import 'package:port_leonir/activy/comp/title.dart';
 import 'package:port_leonir/mini_apps/app_myskill/my_skills.dart';
+import 'package:port_leonir/mini_apps/app_readme/readme_main.dart';
 import 'functions.dart';
 
 class MainPage extends StatefulWidget {
@@ -21,20 +22,21 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   late MdiController mdiController;
+  bool isInit = false;
 @override
   void initState() {
   mdiController = MdiController(() {setState(() {});},context);
-
-
-    super.initState();
+  super.initState();
   }
   @override
   Widget build(BuildContext context) {
+    if(!isInit){ init();isInit = true; }
     final wd = MediaQuery.of(context).size.width;
     final hg = MediaQuery.of(context).size.height;
     StyleMain style = StyleMain();
     Functions call = Functions();
     ListWidget list = ListWidget();
+
 
     return Scaffold(
       backgroundColor: Colors.black,
@@ -61,7 +63,9 @@ class _MainPageState extends State<MainPage> {
             left: 40,
             child: Column(
               children: [
-                IconGenerator(image: "img/pc_icon.png", iconFunction: (){}, textIcon: "Meu Computador"),
+                IconGenerator(image: "img/pc_icon.png",
+                    iconFunction: (){mdiController.addApp("Meu Computador", const ReadmeApp());},
+                    textIcon: "Meu Computador"),
                 const SizedBox(height: 20,),
                 IconGenerator(image: "img/docx_icon.png", 
                     iconFunction: (){},
@@ -133,7 +137,7 @@ class _MainPageState extends State<MainPage> {
             ),
           ),
 
-          //Icones de Aplicativos abertos
+          //Icon Start Menu
           Positioned(
             left: 140,
             bottom:0,
@@ -179,5 +183,8 @@ class _MainPageState extends State<MainPage> {
         ]),
       ),
     );
+  }
+  void init(){
+    mdiController.addApp("Meu Computador", const ReadmeApp());
   }
 }
