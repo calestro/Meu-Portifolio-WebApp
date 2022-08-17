@@ -5,7 +5,7 @@ import 'activy/big_device/desktop.dart';
 
 void main(){
 
-  runApp(MaterialApp(
+  runApp(const MaterialApp(
     home:MainPage(),
   ));
 

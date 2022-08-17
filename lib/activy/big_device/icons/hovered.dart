@@ -6,10 +6,11 @@ class OnHovered extends StatefulWidget {
 
   final Widget child;
   final String type;
+  // ignore: prefer_typing_uninitialized_variables
   final size;
 
 
-  OnHovered({Key? key, required this.child, required this.type, this.size = 60 }) : super(key: key);
+  const OnHovered({Key? key, required this.child, required this.type, this.size = 60 }) : super(key: key);
   @override
   State<OnHovered> createState() => _OnHoveredState();
 }

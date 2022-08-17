@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:port_leonir/activy/big_device/icons/icons_generetor.dart';
 import 'package:port_leonir/activy/comp/styles.dart';
 import 'package:port_leonir/activy/comp/system_software.dart';
 
@@ -32,10 +31,10 @@ class _StartMenuState extends State<StartMenu> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(height: 20,),
+                const SizedBox(height: 20,),
                 Center(child: Text("Social Media", style:style.infoGeral, textAlign: TextAlign.center,)),
                 Padding(
-                  padding: EdgeInsets.only(top: 10, left: 0),
+                  padding: const EdgeInsets.only(top: 10, left: 0),
                   child: Center(
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -43,15 +42,15 @@ class _StartMenuState extends State<StartMenu> {
                         OnHovered(
                             type: 'icon',
                             size: 32,
-                            child: IconButton(onPressed: (){}, icon: Icon(MyIcon.linkedin_circled, size: 32))),
+                            child: IconButton(onPressed: (){}, icon: const Icon(MyIcon.linkedin_circled, size: 32))),
                         OnHovered(
                             type: 'icon',
                             size: 32,
-                            child: IconButton(onPressed: (){}, icon: Icon(MyIcon.whatsapp, size: 32,))),
+                            child: IconButton(onPressed: (){}, icon: const Icon(MyIcon.whatsapp, size: 32,))),
                         OnHovered(
                             type: 'icon',
                             size: 32,
-                            child: IconButton(onPressed: (){}, icon: Icon(MyIcon.github, size: 32,))),
+                            child: IconButton(onPressed: (){}, icon: const Icon(MyIcon.github, size: 32,))),
                       ],
                     ),
                   ),
@@ -81,11 +80,12 @@ class _StartMenuState extends State<StartMenu> {
                                   type: "icon",
                                   size: 400,
                                   child: Padding(
-                                    padding: EdgeInsets.all(10),
+                                    padding: const EdgeInsets.all(10),
                                     child: Row(
                                       children: [
                                         isIcon ? Icon(system.initStart[index]["icon"], color: Colors.white, ) : system.initStart[index]["icon"],
-                                        Text("     " + system.initStart[index]["title"], textAlign: TextAlign.start, style: TextStyle(color: Colors.white),)
+                                        // ignore: prefer_interpolation_to_compose_strings
+                                        Text("     " + system.initStart[index]["title"], textAlign: TextAlign.start, style: const TextStyle(color: Colors.white),)
                                       ],
                                     ),
                                   ),
@@ -110,7 +110,7 @@ class _StartMenuState extends State<StartMenu> {
                                   children: [
                                     Icon(system.initStart[index]["icon"]),
                                     Text(system.initStart[index]["title"], textAlign: TextAlign.start,),
-                                    Expanded(
+                                    const Expanded(
                                       child: Align(
                                         alignment: Alignment.centerRight,
                                           child: Icon(Icons.arrow_forward)
@@ -137,15 +137,14 @@ class _StartMenuState extends State<StartMenu> {
           child: OnHovered(
             type: "icon",
             size: 10,
-            child: Container(
-              child: Image.asset("img/power.png"),
-            ),
+            child: Image.asset("img/power.png"),
           ),
         ),
 
       ],
     );
   }
+// ignore: non_constant_identifier_names
 void OptionsMenu(){
 
 }

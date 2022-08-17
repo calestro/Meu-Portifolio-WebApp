@@ -1,18 +1,19 @@
-import 'dart:math';
+
 
 import 'package:flutter/material.dart';
 import 'package:port_leonir/activy/big_device/windows_maker/list_widget.dart';
 
 
-import 'resizableWindow.dart';
+import 'resizable_window.dart';
 
 class MdiController{
 
   MdiController(this.onUpdate, this.context);
 
+  // ignore: prefer_typing_uninitialized_variables
   var context;
 
-  List<ResizableWindow> _windows = List.empty(growable: true);
+  final List<ResizableWindow> _windows = List.empty(growable: true);
 
   VoidCallback onUpdate;
 

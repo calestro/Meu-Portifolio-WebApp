@@ -7,7 +7,7 @@ class IconWidget extends ImplicitlyAnimatedWidget {
   final bool isSelected;
   final int index;
 
-  const IconWidget({
+  const IconWidget({super.key,
     required this.color,
     required this.isSelected,
     required this.index,

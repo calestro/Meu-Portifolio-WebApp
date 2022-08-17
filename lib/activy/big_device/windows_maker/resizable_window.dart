@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:port_leonir/activy/big_device/windows_maker/list_widget.dart';
 
@@ -22,13 +24,13 @@ class ResizableWindow extends StatefulWidget {
   }
 
   @override
-  _ResizableWindowState createState() => _ResizableWindowState();
+  State<ResizableWindow> createState() =>_ResizableWindowState();
 }
 
 class _ResizableWindowState extends State<ResizableWindow> {
-  var _headerSize = 50.0;
-  var _borderRadius = 10.0;
-  final BoxDecoration _boxDecoration =  BoxDecoration(
+  final _headerSize = 50.0;
+  final _borderRadius = 10.0;
+  final BoxDecoration _boxDecoration =  const BoxDecoration(
     color: Color(0xFF212121),
     borderRadius: BorderRadius.only(topLeft: Radius.circular(10), topRight:Radius.circular(10) ),
   );
@@ -43,7 +45,7 @@ class _ResizableWindowState extends State<ResizableWindow> {
         decoration: BoxDecoration(
           //Here goes the same radius, u can put into a var or function
           borderRadius: BorderRadius.all(Radius.circular(_borderRadius)),
-          boxShadow: [
+          boxShadow: const [
             BoxShadow(
               color: Color(0x54000000),
               spreadRadius: 4,
@@ -119,10 +121,10 @@ class _ResizableWindowState extends State<ResizableWindow> {
                 right: 0,
                 child: GestureDetector(
                   onPanUpdate: _onHorizontalDragBottomRight,
-                  child: MouseRegion(
+                  child: const MouseRegion(
                     cursor: SystemMouseCursors.resizeUpLeftDownRight,
                     opaque: true,
-                    child: Container(
+                    child: SizedBox(
                       height: 6,
                       width: 6,
                     ),
@@ -133,10 +135,10 @@ class _ResizableWindowState extends State<ResizableWindow> {
                 left: 0,
                 child: GestureDetector(
                   onPanUpdate: _onHorizontalDragBottomLeft,
-                  child: MouseRegion(
+                  child: const MouseRegion(
                     cursor: SystemMouseCursors.resizeUpRightDownLeft,
                     opaque: true,
-                    child: Container(
+                    child: SizedBox(
                       height: 6,
                       width: 6,
                     ),
@@ -147,10 +149,10 @@ class _ResizableWindowState extends State<ResizableWindow> {
                 right: 0,
                 child: GestureDetector(
                   onPanUpdate: _onHorizontalDragTopRight,
-                  child: MouseRegion(
+                  child: const MouseRegion(
                     cursor: SystemMouseCursors.resizeUpRightDownLeft,
                     opaque: true,
-                    child: Container(
+                    child: SizedBox(
                       height: 6,
                       width: 6,
                     ),
@@ -161,10 +163,10 @@ class _ResizableWindowState extends State<ResizableWindow> {
                 top: 0,
                 child: GestureDetector(
                   onPanUpdate: _onHorizontalDragTopLeft,
-                  child: MouseRegion(
+                  child: const MouseRegion(
                     cursor: SystemMouseCursors.resizeUpLeftDownRight,
                     opaque: true,
-                    child: Container(
+                    child: SizedBox(
                       height: 6,
                       width: 6,
                     ),
@@ -193,13 +195,13 @@ class _ResizableWindowState extends State<ResizableWindow> {
               top: 0,
               bottom: 0,
               child: ElevatedButton(
-               child: Text("-"),
-                style: ElevatedButton.styleFrom(
-                    primary: Colors.transparent,
+               style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.transparent,
                     textStyle:
-                    TextStyle(fontSize: 0,
+                    const TextStyle(fontSize: 0,
                         fontWeight: FontWeight.bold)),
                 onPressed:onClickMinimize,
+               child: const Text("-"),
               ),
             ),
             Positioned(
@@ -207,12 +209,12 @@ class _ResizableWindowState extends State<ResizableWindow> {
               top: 0,
               bottom: 0,
                 child: ElevatedButton.icon(
-                    icon: Icon(Icons.crop_square, color: Colors.white,),
-                    label: Text(""),
+                    icon: const Icon(Icons.crop_square, color: Colors.white,),
+                    label: const Text(""),
                     style: ElevatedButton.styleFrom(
-                        primary: Colors.transparent,
+                        backgroundColor: Colors.transparent,
                         textStyle:
-                        TextStyle(fontSize: 0,
+                        const TextStyle(fontSize: 0,
                             fontWeight: FontWeight.bold)),
                     onPressed:_onClickMaximize,
                 ),
@@ -222,17 +224,17 @@ class _ResizableWindowState extends State<ResizableWindow> {
               top: 0,
               bottom: 0,
               child: ElevatedButton.icon(
-                icon: Icon(Icons.close, color: Colors.white,),
-                label: Text(""),
+                icon: const Icon(Icons.close, color: Colors.white,),
+                label: const Text(""),
                 style: ElevatedButton.styleFrom(
-                    primary: Colors.red,
+                    backgroundColor: Colors.red,
                     textStyle:
-                    TextStyle(fontSize: 15,
+                    const TextStyle(fontSize: 15,
                         fontWeight: FontWeight.bold)),
                 onPressed:widget.onCloseButtonClicked,
               ),
             ),
-            Positioned.fill(child: Center(child: Text(widget.title,style: TextStyle(color: Colors.white),))),
+            Positioned.fill(child: Center(child: Text(widget.title,style: const TextStyle(color: Colors.white),))),
           ],
         ),
       ),

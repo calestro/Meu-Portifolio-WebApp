@@ -9,13 +9,13 @@ class StyleMain{
 
   //decoration Menu Iniciar
   final BoxDecoration startMenu = BoxDecoration(
-    color: Color(0xFF323232),
+    color: const Color(0xFF323232),
     border: Border.all(
     color: Colors.black,
     width: 2,
 
   ),
-      borderRadius: BorderRadius.all(Radius.circular(20)),
+      borderRadius: const BorderRadius.all(Radius.circular(20)),
   );
 
 

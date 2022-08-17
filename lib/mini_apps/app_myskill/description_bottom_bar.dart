@@ -12,9 +12,9 @@ class DescriptionLanguage extends StatelessWidget {
     return Material(
       child: Center(
         child: Padding(
-          padding: EdgeInsets.only(top: 30, bottom: 100),
+          padding: const EdgeInsets.only(top: 30, bottom: 100),
           child: index == -1
-              ? Text("Passe o mouse em cima para obter mais informções")
+              ? const Text("Passe o mouse em cima para obter mais informções")
               : Container(
                   width: wd,
                   color: AppData.dataList[index].color,
@@ -30,7 +30,7 @@ class DescriptionLanguage extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            SizedBox(height: 10),
+                            const SizedBox(height: 10),
                             Text(AppData.dataList[index].title),
                             SizedBox(height: hg * 0.02),
                             Text(AppData.dataList[index].description),
@@ -41,7 +41,7 @@ class DescriptionLanguage extends StatelessWidget {
                           flex: 1,
                           child: Center(
                               child: Padding(
-                                  padding: EdgeInsets.only(right: 100),
+                                  padding: const EdgeInsets.only(right: 100),
                                   child: Icon(
                                     AppData.dataList[index].iconInit,
                                     size: hg * 0.15,

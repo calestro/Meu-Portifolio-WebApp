@@ -1,5 +1,7 @@
+
+
 import 'package:flutter/material.dart';
-import 'mdiController.dart';
+import 'mdi_controller.dart';
 
 
 class MdiManager extends StatefulWidget {
@@ -9,7 +11,7 @@ class MdiManager extends StatefulWidget {
   const MdiManager({Key? key, required this.mdiController}) : super(key: key);
 
   @override
-  _MdiManagerState createState() => _MdiManagerState();
+  State<MdiManager> createState() => _MdiManagerState();
 }
 
 class _MdiManagerState extends State<MdiManager> {
@@ -22,8 +24,8 @@ class _MdiManagerState extends State<MdiManager> {
         return Positioned(
           left: e.x,
           top: e.y,
-          child: e,
           key: e.key,
+          child: e,
         );
       }).toList()
     );

@@ -133,7 +133,7 @@ class _GraphMySkillState extends State<GraphMySkill> {
                       barGroups: AppData.dataList.asMap().entries.map((e) {
                         final index = e.key;
                         final data = e.value;
-                        final color = Colors.green;
+                        const color = Colors.green;
                         return generateBarGroup(
                           index,
                           touchedGroupIndex == e.key ? color : data.color,

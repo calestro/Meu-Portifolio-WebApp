@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'dart:async';
 
 import 'package:flutter/material.dart';
@@ -30,17 +32,13 @@ class _DateAndTimeState extends State<DateAndTime> {
         Positioned(
           bottom: 32,
           right: 52,
-          child: Container(
-            child: Text(hora.substring(11,16), style: style.infoGeral,),
-          ),
+          child: Text(hora.substring(11,16), style: style.infoGeral,),
         ),
         //data
         Positioned(
           bottom: 10,
           right: 30,
-          child: Container(
-            child: Text(hora.substring(8,10)+ "/" + hora.substring(5,7)+ "/" + hora.substring(0,4), style: style.infoGeral,),
-          ),
+          child: Text("${hora.substring(8,10)}/${hora.substring(5,7)}/${hora.substring(0,4)}", style: style.infoGeral,),
         ),
         Positioned(
           bottom: 0,

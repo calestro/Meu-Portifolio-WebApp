@@ -3,15 +3,12 @@ import 'package:port_leonir/activy/big_device/icons/icons_generetor.dart';
 import 'package:port_leonir/activy/big_device/icons/start_icon.dart';
 import 'package:port_leonir/activy/big_device/start_menu.dart';
 import 'package:port_leonir/activy/big_device/windows_maker/list_widget.dart';
-import 'package:port_leonir/activy/big_device/windows_maker/mdiController.dart';
-import 'package:port_leonir/activy/big_device/windows_maker/mdiManager.dart';
+import 'package:port_leonir/activy/big_device/windows_maker/mdi_controller.dart';
+import 'package:port_leonir/activy/big_device/windows_maker/mdi_manager.dart';
 import 'package:port_leonir/activy/comp/date_and_time.dart';
 import 'package:port_leonir/activy/comp/styles.dart';
 import 'package:port_leonir/activy/comp/title.dart';
 import 'package:port_leonir/mini_apps/app_myskill/my_skills.dart';
-import '../../row_start_menu.dart';
-
-
 import 'functions.dart';
 
 class MainPage extends StatefulWidget {
@@ -67,11 +64,11 @@ class _MainPageState extends State<MainPage> {
                 IconGenerator(image: "img/pc_icon.png", iconFunction: (){}, textIcon: "Meu Computador"),
                 const SizedBox(height: 20,),
                 IconGenerator(image: "img/docx_icon.png", 
-                    iconFunction: (){mdiController.addApp("teste", StartMenuRow());},
+                    iconFunction: (){},
                     textIcon: "Curriculum"),
                 const SizedBox(height: 20,),
                 IconGenerator(image: "img/skill_icon.png",
-                    iconFunction:(){mdiController.addApp("Minhas Skills", GraphMySkill());},
+                    iconFunction:(){mdiController.addApp("Minhas Skills", const GraphMySkill());},
                     textIcon: "Minhas Skills"
                 ),
               ],
@@ -82,7 +79,7 @@ class _MainPageState extends State<MainPage> {
           Positioned(
             top:0,
             left: 0,
-            child: Container(
+            child: SizedBox(
               width: wd,
               height: hg,
               child: MdiManager(mdiController: mdiController,),
@@ -140,7 +137,7 @@ class _MainPageState extends State<MainPage> {
           Positioned(
             left: 140,
             bottom:0,
-              child:  Container(
+              child:  SizedBox(
                 width: wd * 0.699,
                 height: 54,
                 child: Center(
@@ -175,7 +172,7 @@ class _MainPageState extends State<MainPage> {
               ),),
 
           //Hora
-          DateAndTime(),
+          const DateAndTime(),
 
 
 

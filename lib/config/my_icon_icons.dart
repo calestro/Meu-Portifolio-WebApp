@@ -25,6 +25,8 @@
 ///         License:   SIL (http://scripts.sil.org/OFL)
 ///         Homepage:  http://www.entypo.com
 ///
+// ignore_for_file: constant_identifier_names
+
 import 'package:flutter/widgets.dart';
 
 class MyIcon {
