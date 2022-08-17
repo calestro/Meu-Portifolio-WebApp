@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_interpolation_to_compose_strings, duplicate_ignore
+
 import 'package:flutter/material.dart';
 import 'package:port_leonir/activy/comp/styles.dart';
 import 'package:port_leonir/activy/comp/system_software.dart';
@@ -6,7 +8,9 @@ import '../../config/my_icon_icons.dart';
 import 'icons/hovered.dart';
 
 class StartMenu extends StatefulWidget {
-  const StartMenu({Key? key,}) : super(key: key);
+  const StartMenu({
+    Key? key,
+  }) : super(key: key);
 
   @override
   State<StartMenu> createState() => _StartMenuState();
@@ -15,11 +19,10 @@ class StartMenu extends StatefulWidget {
 class _StartMenuState extends State<StartMenu> {
   @override
   Widget build(BuildContext context) {
-  SystemSoftware system = SystemSoftware();
-  StyleMain style = StyleMain();
+    SystemSoftware system = SystemSoftware();
+    StyleMain style = StyleMain();
 
-
-  return Stack(
+    return Stack(
       children: [
         Positioned(
           left: 15,
@@ -31,8 +34,15 @@ class _StartMenuState extends State<StartMenu> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const SizedBox(height: 20,),
-                Center(child: Text("Social Media", style:style.infoGeral, textAlign: TextAlign.center,)),
+                const SizedBox(
+                  height: 20,
+                ),
+                Center(
+                    child: Text(
+                  "Social Media",
+                  style: style.infoGeral,
+                  textAlign: TextAlign.center,
+                )),
                 Padding(
                   padding: const EdgeInsets.only(top: 10, left: 0),
                   child: Center(
@@ -42,30 +52,40 @@ class _StartMenuState extends State<StartMenu> {
                         OnHovered(
                             type: 'icon',
                             size: 32,
-                            child: IconButton(onPressed: (){}, icon: const Icon(MyIcon.linkedin_circled, size: 32))),
+                            child: IconButton(
+                                onPressed: () {},
+                                icon: const Icon(MyIcon.linkedin_circled,
+                                    size: 32))),
                         OnHovered(
                             type: 'icon',
                             size: 32,
-                            child: IconButton(onPressed: (){}, icon: const Icon(MyIcon.whatsapp, size: 32,))),
+                            child: IconButton(
+                                onPressed: () {},
+                                icon: const Icon(
+                                  MyIcon.whatsapp,
+                                  size: 32,
+                                ))),
                         OnHovered(
                             type: 'icon',
                             size: 32,
-                            child: IconButton(onPressed: (){}, icon: const Icon(MyIcon.github, size: 32,))),
+                            child: IconButton(
+                                onPressed: () {},
+                                icon: const Icon(
+                                  MyIcon.github,
+                                  size: 32,
+                                ))),
                       ],
                     ),
                   ),
                 ),
                 Container(height: 360 - (system.initStart.length * 50)),
-
                 Align(
                   alignment: Alignment.bottomLeft,
                   child: ListView.builder(
-                    shrinkWrap: true,
+                      shrinkWrap: true,
                       itemCount: system.initStart.length,
-                      itemBuilder: (context, index){
-
-
-                        if(system.initStart[index].length == 2) {
+                      itemBuilder: (context, index) {
+                        if (system.initStart[index].length == 2) {
                           return Column(
                             children: [
                               Container(
@@ -80,8 +100,18 @@ class _StartMenuState extends State<StartMenu> {
                                     padding: const EdgeInsets.all(10),
                                     child: Row(
                                       children: [
-                                        Icon(system.initStart[index]["icon"], color: Colors.white, ),
-                                        Text("     " + system.initStart[index]["title"], textAlign: TextAlign.start, style: const TextStyle(color: Colors.white),)
+                                        // ignore: prefer_interpolation_to_compose_strings
+                                        Icon(
+                                          system.initStart[index]["icon"],
+                                          color: Colors.white,
+                                        ),
+                                        Text(
+                                          "     " +
+                                              system.initStart[index]["title"],
+                                          textAlign: TextAlign.start,
+                                          style: const TextStyle(
+                                              color: Colors.white),
+                                        )
                                       ],
                                     ),
                                   ),
@@ -89,8 +119,7 @@ class _StartMenuState extends State<StartMenu> {
                               ),
                             ],
                           );
-                        }
-                        else{
+                        } else {
                           return Container(
                             width: 400,
                             height: 50,
@@ -105,12 +134,14 @@ class _StartMenuState extends State<StartMenu> {
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Icon(system.initStart[index]["icon"]),
-                                    Text(system.initStart[index]["title"], textAlign: TextAlign.start,),
+                                    Text(
+                                      system.initStart[index]["title"],
+                                      textAlign: TextAlign.start,
+                                    ),
                                     const Expanded(
                                       child: Align(
-                                        alignment: Alignment.centerRight,
-                                          child: Icon(Icons.arrow_forward)
-                                      ),
+                                          alignment: Alignment.centerRight,
+                                          child: Icon(Icons.arrow_forward)),
                                     ),
                                   ],
                                 ),
@@ -118,8 +149,7 @@ class _StartMenuState extends State<StartMenu> {
                             ),
                           );
                         }
-                      }
-                  ),
+                      }),
                 ),
               ],
             ),
@@ -136,14 +166,10 @@ class _StartMenuState extends State<StartMenu> {
             child: Image.asset("img/power.png"),
           ),
         ),
-
       ],
     );
   }
+
 // ignore: non_constant_identifier_names
-void OptionsMenu(){
-
-}
-
-
+  void OptionsMenu() {}
 }

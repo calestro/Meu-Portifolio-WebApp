@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'activy/big_device/desktop.dart';
+import 'package:port_leonir/MainConfigure.dart';
+
 
 
 
 void main(){
 
   runApp(const MaterialApp(
-    home:MainPage(),
+    home:MainConfigure(),
   ));
 
 }

@@ -12,15 +12,15 @@ import 'package:port_leonir/mini_apps/app_myskill/my_skills.dart';
 import 'package:port_leonir/mini_apps/app_readme/readme_main.dart';
 import 'functions.dart';
 
-class MainPage extends StatefulWidget {
+class MainBigDevices extends StatefulWidget {
 
-  const MainPage({Key? key,}) : super(key: key);
+  const MainBigDevices({Key? key,}) : super(key: key);
 
   @override
-  State<MainPage> createState() => _MainPageState();
+  State<MainBigDevices> createState() => _MainBigDevicesState();
 }
 
-class _MainPageState extends State<MainPage> {
+class _MainBigDevicesState extends State<MainBigDevices> {
   late MdiController mdiController;
   bool isInit = false;
 @override
