@@ -14,7 +14,8 @@ class ListWidget{
   // ignore: non_constant_identifier_names
   Map<String, String> IconAplication = {
     "Minhas Skills":"img/skill_icon.png",
-    "Meu Computador":"img/pc_icon.png"
+    "Meu Computador":"img/pc_icon.png",
+    "Meu Curriculo":"img/docx_icon.png"
 
 
   };

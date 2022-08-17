@@ -10,6 +10,7 @@ import 'package:port_leonir/activy/comp/styles.dart';
 import 'package:port_leonir/activy/comp/title.dart';
 import 'package:port_leonir/mini_apps/app_myskill/my_skills.dart';
 import 'package:port_leonir/mini_apps/app_readme/readme_main.dart';
+import '../../mini_apps/curriculum/my_curriculum.dart';
 import 'functions.dart';
 
 class MainBigDevices extends StatefulWidget {
@@ -68,7 +69,7 @@ class _MainBigDevicesState extends State<MainBigDevices> {
                     textIcon: "Meu Computador"),
                 const SizedBox(height: 20,),
                 IconGenerator(image: "img/docx_icon.png", 
-                    iconFunction: (){},
+                    iconFunction: (){mdiController.addApp("Meu Curriculo", const MyCurriculum());},
                     textIcon: "Curriculum"),
                 const SizedBox(height: 20,),
                 IconGenerator(image: "img/skill_icon.png",
