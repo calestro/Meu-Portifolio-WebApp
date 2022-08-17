@@ -32,8 +32,7 @@ class _ReadmeAppState extends State<ReadmeApp> {
             Text("Bem Vindo !", style: title),
             const SizedBox(height: 15,),
             Text("Clicando no menu Start você poderá desfrutar das minhas aplicações", style: subtitle,),
-            Text("elas são carregadas através de uma API Node, de todos os meus repositórios públicos do GitHub", style: subtitle,textAlign: TextAlign.center,),
-
+            Text("elas são carregadas através de uma API Node,a qual carrega todos os meus repositórios públicos do GitHub", style: subtitle,textAlign: TextAlign.center,),
             const SizedBox(height: 50,),
             Text("Leonir Junior", style: subtitle,),
             Text("WebApps & MobileApps", style: subtitle),

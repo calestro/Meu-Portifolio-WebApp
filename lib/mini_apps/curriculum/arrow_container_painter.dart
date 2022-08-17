@@ -7,18 +7,18 @@ class arrowContainer extends CustomPainter {
   arrowContainer(this.isOpacity);
 
   @override
-  void paint(Canvas canvas, Size size, {bool isOpacity = false}) {
+  void paint(Canvas canvas, Size size) {
     final Gradient gradient = new LinearGradient(
       begin: Alignment.topCenter,
       end: Alignment.bottomCenter,
-      colors: [Colors.redAccent, Colors.red],
+      colors: [Colors.redAccent.shade700, Colors.red.shade700],
       tileMode: TileMode.clamp,
     );
 
     final Gradient gradientOpacity = new LinearGradient(
       begin: Alignment.topCenter,
       end: Alignment.bottomCenter,
-      colors: [Colors.redAccent.shade200.withOpacity(0.7), Colors.red.shade200],
+      colors: [Colors.redAccent, Colors.red],
       tileMode: TileMode.clamp,
     );
 
@@ -28,9 +28,9 @@ class arrowContainer extends CustomPainter {
 
     Path path = Path();
     path.moveTo(0, 0);
-    path.lineTo(size.width - 30 , 0);
-    path.lineTo(size.width + 30, size.height / 2);
-    path.lineTo(size.width - 30, size.height);
+    path.lineTo(size.width - 10 , 0);
+    path.lineTo(size.width + 10, size.height / 2);
+    path.lineTo(size.width - 10, size.height);
     path.lineTo(0, size.height);
     path.close();
 

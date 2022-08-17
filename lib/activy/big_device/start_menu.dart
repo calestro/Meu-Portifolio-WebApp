@@ -156,16 +156,7 @@ class _StartMenuState extends State<StartMenu> {
           ),
         ),
 
-        //botão de desligar
-        Positioned(
-          bottom: 72,
-          left: 320,
-          child: OnHovered(
-            type: "icon",
-            size: 10,
-            child: Image.asset("img/power.png"),
-          ),
-        ),
+
       ],
     );
   }

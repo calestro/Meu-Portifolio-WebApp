@@ -16,8 +16,7 @@ class SystemSoftware{
 
 
   late List<dynamic> initStart = [
-    games,
-    software,
+
   ];
 
 }
