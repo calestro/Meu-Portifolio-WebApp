@@ -63,10 +63,7 @@ class _StartMenuState extends State<StartMenu> {
                     shrinkWrap: true,
                       itemCount: system.initStart.length,
                       itemBuilder: (context, index){
-                        bool isIcon = true;
-                        if(system.initStart[index]["icon"].runtimeType.toString() != "IconData"){
-                          isIcon = false;
-                        }
+
 
                         if(system.initStart[index].length == 2) {
                           return Column(
@@ -83,8 +80,7 @@ class _StartMenuState extends State<StartMenu> {
                                     padding: const EdgeInsets.all(10),
                                     child: Row(
                                       children: [
-                                        isIcon ? Icon(system.initStart[index]["icon"], color: Colors.white, ) : system.initStart[index]["icon"],
-                                        // ignore: prefer_interpolation_to_compose_strings
+                                        Icon(system.initStart[index]["icon"], color: Colors.white, ),
                                         Text("     " + system.initStart[index]["title"], textAlign: TextAlign.start, style: const TextStyle(color: Colors.white),)
                                       ],
                                     ),
