@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:port_leonir/activy/comp/styles.dart';
 import 'package:port_leonir/activy/comp/system_software.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../config/my_icon_icons.dart';
 import 'icons/hovered.dart';
@@ -17,8 +18,11 @@ class StartMenu extends StatefulWidget {
 }
 
 class _StartMenuState extends State<StartMenu> {
+
+  final Uri urlGit = Uri.parse("https://github.com/calestro");
   @override
   Widget build(BuildContext context) {
+
     SystemSoftware system = SystemSoftware();
     StyleMain style = StyleMain();
 
@@ -69,7 +73,7 @@ class _StartMenuState extends State<StartMenu> {
                             type: 'icon',
                             size: 32,
                             child: IconButton(
-                                onPressed: () {},
+                                onPressed: _launchGit,
                                 icon: const Icon(
                                   MyIcon.github,
                                   size: 32,
@@ -163,4 +167,9 @@ class _StartMenuState extends State<StartMenu> {
 
 // ignore: non_constant_identifier_names
   void OptionsMenu() {}
+
+  Future<void> _launchGit() async {
+    if (!await launchUrl(urlGit)) {
+      throw 'Could not launch $urlGit';}
+    }
 }

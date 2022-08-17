@@ -71,10 +71,6 @@ class _MainBigDevicesState extends State<MainBigDevices> {
                     iconFunction: (){mdiController.addApp("Meu Computador", const ReadmeApp());},
                     textIcon: "Meu Computador"),
                 const SizedBox(height: 20,),
-                IconGenerator(image: "img/docx_icon.png", 
-                    iconFunction: (){mdiController.addApp("Meu Curriculo", const MyCurriculum(), initMaximize: true);},
-                    textIcon: "Curriculum"),
-                const SizedBox(height: 20,),
                 IconGenerator(image: "img/skill_icon.png",
                     iconFunction:(){mdiController.addApp("Minhas Skills", const GraphMySkill());},
                     textIcon: "Minhas Skills"

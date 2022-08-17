@@ -117,10 +117,20 @@ class _MyCurriculumState extends State<MyCurriculum> {
                       padding: EdgeInsets.only(left:60,right: 60),
                       child: Column(
                         children: [
-                          DataGenerator(textStudy: "teste", textdescription:"teste", iconTitle: Icons.book,),
-                          DataGenerator(textStudy: "teste", textdescription:"teste", iconTitle: Icons.book,),
-                          DataGenerator(textStudy: "teste", textdescription:"teste", iconTitle: Icons.book,),
-                          DataGenerator(textStudy: "teste", textdescription:"teste", iconTitle: Icons.book,),
+                          DataGenerator(instituicaoText: "Unopar - Ensino Superior Incompleto",
+                            textStudy: "Analise e Desenvolvilmento de Sistemas",
+                            textdescription:"Parei no ultimo semestre, porque minha familia começou a ter problemas de saúde e financeira,"
+                                "e a faculdade era um gasto que eu não conseguia mais pagar,não consegui"
+                                "mais voltar porque já tinha acabado o tempo",
+                            iconTitle: Icons.book,),
+                          SizedBox(height: 20),
+                          DataGenerator(instituicaoText: "Unninter - Cursanso Ensino Superior",
+                            textStudy: "Desenvolvedor de dispositivos Mobile",
+                            textdescription:"Cursando Desenvolvilmento Mobile, que hoje e a minha paixão, atualmente trabalho autonomo com dois "
+                            "aplicativos na Play Store ",
+                            iconTitle: Icons.book,),
+                          DataGenerator(instituicaoText: "Unopar", textStudy: "Curso Técnico de Programador e Operador de Torno e Centro de Usinagem a CNC - SENAI", textdescription:"teste", iconTitle: Icons.book,),
+                          DataGenerator(instituicaoText: "Unopar", textStudy: "Curso que me iniciou no Mundo da Programação ", textdescription:"teste", iconTitle: Icons.book,),
                         ],
                       ),
                     )),
@@ -129,10 +139,10 @@ class _MyCurriculumState extends State<MyCurriculum> {
                           padding: EdgeInsets.only(left: 60, right: 60),
                           child: Column(
                             children: [
-                              DataGenerator(textStudy: "teste", textdescription:"teste", iconTitle: Icons.work,),
-                              DataGenerator(textStudy: "teste", textdescription:"teste", iconTitle: Icons.work,),
-                              DataGenerator(textStudy: "teste", textdescription:"teste", iconTitle: Icons.work,),
-                              DataGenerator(textStudy: "teste", textdescription:"teste", iconTitle: Icons.work,),
+                              DataGenerator(instituicaoText: "Unopar", textStudy: "teste", textdescription:"teste", iconTitle: Icons.work,),
+                              DataGenerator(instituicaoText: "Unopar", textStudy: "teste", textdescription:"teste", iconTitle: Icons.work,),
+                              DataGenerator(instituicaoText: "Unopar", textStudy: "teste", textdescription:"teste", iconTitle: Icons.work,),
+                              DataGenerator(instituicaoText: "Unopar", textStudy: "teste", textdescription:"teste", iconTitle: Icons.work,),
                             ],
                           ),
                         )
