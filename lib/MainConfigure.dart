@@ -18,29 +18,33 @@ class MainConfigure extends StatefulWidget {
 class _MainConfigureState extends State<MainConfigure> {
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-        builder: (_,constraints){
-          if(constraints.maxWidth >= 480) {
-            return const MainBigDevices();
-          }
-          else{
-            return Material(
-              child: Container(
-                color: Colors.black,
-                child: Center(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text("Desculpe-me", style:StyleMain().infoGeral,),
-                      Text("Versão Mobile em Manutenção", style:StyleMain().infoGeral)
-                    ],
+    return Title(
+      color: Colors.blue, // This is required
+      title: 'Leonir Júnior',
+      child: LayoutBuilder(
+          builder: (_,constraints){
+            if(constraints.maxWidth >= 480) {
+              return const MainBigDevices();
+            }
+            else{
+              return Material(
+                child: Container(
+                  color: Colors.black,
+                  child: Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text("Desculpe-me", style:StyleMain().infoGeral,),
+                        Text("Versão Mobile em Manutenção", style:StyleMain().infoGeral)
+                      ],
+                    ),
                   ),
                 ),
-              ),
-            );
-          }
+              );
+            }
 
-        }
+          }
+      ),
     );
   }
 }
