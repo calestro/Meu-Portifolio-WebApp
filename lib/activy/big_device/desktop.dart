@@ -10,7 +10,6 @@ import 'package:port_leonir/activy/comp/styles.dart';
 import 'package:port_leonir/activy/comp/title.dart';
 import 'package:port_leonir/mini_apps/app_myskill/my_skills.dart';
 import 'package:port_leonir/mini_apps/app_readme/readme_main.dart';
-import '../../mini_apps/curriculum/my_curriculum.dart';
 import 'functions.dart';
 
 class MainBigDevices extends StatefulWidget {
@@ -30,7 +29,9 @@ class _MainBigDevicesState extends State<MainBigDevices> {
   super.initState();
   }
   ListWidget list = ListWidget();
+  // ignore: prefer_typing_uninitialized_variables
   late final wd;
+  // ignore: prefer_typing_uninitialized_variables
   late final hg;
   @override
   Widget build(BuildContext context) {

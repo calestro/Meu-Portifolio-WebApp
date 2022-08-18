@@ -14,6 +14,7 @@ class ResizableWindow extends StatefulWidget {
   Widget body;
   bool isMinimmize  = false;
   bool isMaximize = false;
+  // ignore: prefer_typing_uninitialized_variables
   var context;
 
   late Function(double, double) onWindowDragged;

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 
+// ignore: camel_case_types
 class arrowContainer extends CustomPainter {
   bool isOpacity;
 
@@ -8,14 +9,14 @@ class arrowContainer extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    final Gradient gradient = new LinearGradient(
+    final Gradient gradient = LinearGradient(
       begin: Alignment.topCenter,
       end: Alignment.bottomCenter,
       colors: [Colors.redAccent.shade700, Colors.red.shade700],
       tileMode: TileMode.clamp,
     );
 
-    final Gradient gradientOpacity = new LinearGradient(
+    const Gradient gradientOpacity = LinearGradient(
       begin: Alignment.topCenter,
       end: Alignment.bottomCenter,
       colors: [Colors.redAccent, Colors.red],
@@ -23,7 +24,7 @@ class arrowContainer extends CustomPainter {
     );
 
     final Rect colorBounds = Rect.fromLTRB(0, 0, size.width, size.height);
-    final Paint paint = new Paint()
+    final Paint paint = Paint()
       ..shader = !isOpacity ? gradient.createShader(colorBounds):gradientOpacity.createShader(colorBounds);
 
     Path path = Path();

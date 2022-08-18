@@ -21,11 +21,11 @@ class _MyCurriculumState extends State<MyCurriculum> {
       color: Colors.white60,
       child: Stack(
         children: [
-          Positioned(
+          const Positioned(
               top: 10,
               left: 10,
               child: Text("Leonir Júnior", style: TextStyle(fontSize: 50),)),
-          Positioned(
+          const Positioned(
             top: 60,
               left: 60,
               child: Text("Ribeiro Calestro", style: TextStyle(fontSize: 50),)),
@@ -41,10 +41,10 @@ class _MyCurriculumState extends State<MyCurriculum> {
             left: wd/3 * 2- 20,
             child: CustomPaint(
               painter: arrowContainer(true),
-              child: Container(
+              child: SizedBox(
                 width: wd/3 +10,
                 height: 30,
-                child: Padding(
+                child: const Padding(
                   padding: EdgeInsets.only(top: 3),
                   child: Align(
                     alignment: Alignment.topCenter,
@@ -60,10 +60,10 @@ class _MyCurriculumState extends State<MyCurriculum> {
             left: wd/3 - 10,
             child: CustomPaint(
               painter: arrowContainer(false),
-              child: Container(
+              child: SizedBox(
                 width: wd/3,
                 height: 30,
-                child: Padding(
+                child: const Padding(
                   padding: EdgeInsets.only(top: 3),
                   child: Align(
                     alignment: Alignment.topCenter,
@@ -77,10 +77,10 @@ class _MyCurriculumState extends State<MyCurriculum> {
             top: 130,
             child: CustomPaint(
               painter: arrowContainer(true),
-              child: Container(
+              child: SizedBox(
                 width: wd/3,
                 height: 30,
-                child: Padding(
+                child: const Padding(
                   padding: EdgeInsets.only(top: 3),
                   child: Align(
                     alignment: Alignment.topCenter,
@@ -99,9 +99,9 @@ class _MyCurriculumState extends State<MyCurriculum> {
                 child: Row(
                   children: [
                     Expanded(child: Padding(
-                      padding: EdgeInsets.only(left: 60,right: 60),
+                      padding: const EdgeInsets.only(left: 60,right: 60),
                       child: Column(
-                        children: [
+                        children: const [
                           Text("Olá, meu nome e Leonir Junior, e atualmente trabalho como autonomo em desenvolvimento de "
                               "WebApps e Mobile, também tenho um emprego na CLT no ramo de refrigeração na qual uso para "
                               "completar meus rendimentos.Tenho expêriencia de 3 anos em Desenvolvimento Web inclusive "
@@ -114,9 +114,9 @@ class _MyCurriculumState extends State<MyCurriculum> {
                       ),
                     )),
                     Expanded(child: Padding(
-                      padding: EdgeInsets.only(left:60,right: 60),
+                      padding: const EdgeInsets.only(left:60,right: 60),
                       child: Column(
-                        children: [
+                        children: const [
                           DataGenerator(instituicaoText: "Unopar - Ensino Superior Incompleto",
                             textStudy: "Analise e Desenvolvilmento de Sistemas",
                             textdescription:"Parei no ultimo semestre, porque minha familia começou a ter problemas de saúde e financeira,"
@@ -136,9 +136,9 @@ class _MyCurriculumState extends State<MyCurriculum> {
                     )),
                     Expanded(
                         child:Padding(
-                          padding: EdgeInsets.only(left: 60, right: 60),
+                          padding: const EdgeInsets.only(left: 60, right: 60),
                           child: Column(
-                            children: [
+                            children: const [
                               DataGenerator(instituicaoText: "Unopar", textStudy: "teste", textdescription:"teste", iconTitle: Icons.work,),
                               DataGenerator(instituicaoText: "Unopar", textStudy: "teste", textdescription:"teste", iconTitle: Icons.work,),
                               DataGenerator(instituicaoText: "Unopar", textStudy: "teste", textdescription:"teste", iconTitle: Icons.work,),

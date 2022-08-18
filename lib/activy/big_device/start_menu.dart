@@ -20,6 +20,8 @@ class StartMenu extends StatefulWidget {
 class _StartMenuState extends State<StartMenu> {
 
   final Uri urlGit = Uri.parse("https://github.com/calestro");
+  final Uri urlWhats = Uri.parse("https://api.whatsapp.com/send?phone=5522992131045");
+  final Uri urlLink = Uri.parse("https://www.linkedin.com/in/leonir-junior-r-calestro-637090215/");
   @override
   Widget build(BuildContext context) {
 
@@ -57,14 +59,14 @@ class _StartMenuState extends State<StartMenu> {
                             type: 'icon',
                             size: 32,
                             child: IconButton(
-                                onPressed: () {},
+                                onPressed:_launchLink,
                                 icon: const Icon(MyIcon.linkedin_circled,
                                     size: 32))),
                         OnHovered(
                             type: 'icon',
                             size: 32,
                             child: IconButton(
-                                onPressed: () {},
+                                onPressed:_launchWhats,
                                 icon: const Icon(
                                   MyIcon.whatsapp,
                                   size: 32,
@@ -171,5 +173,17 @@ class _StartMenuState extends State<StartMenu> {
   Future<void> _launchGit() async {
     if (!await launchUrl(urlGit)) {
       throw 'Could not launch $urlGit';}
+  }
+  // ignore: unused_element
+  Future<void> _launchWhats() async {
+    if (!await launchUrl(urlWhats)) {
+      throw 'Could not launch $urlWhats';
+    }
+  }
+
+    Future<void> _launchLink() async {
+      if (!await launchUrl(urlLink)) {
+        throw 'Could not launch $urlWhats';
+      }
     }
 }

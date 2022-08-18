@@ -25,7 +25,7 @@ class DataGenerator extends StatelessWidget {
             ],
           ),
           Padding(
-            padding: EdgeInsets.only(left: 45),
+            padding: const EdgeInsets.only(left: 45),
             child: Text(textdescription),
           )
         ],
